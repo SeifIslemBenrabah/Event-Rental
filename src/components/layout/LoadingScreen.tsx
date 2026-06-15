@@ -18,7 +18,7 @@ const LoadingScreen = ({ onDone }: { onDone: () => void }) => {
         position: 'fixed',
         inset: 0,
         zIndex: 9999,
-        background: 'radial-gradient(ellipse at 50% 40%, #16003a 0%, #08001e 55%, #000000 100%)',
+        background: '#ffffff',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -62,7 +62,7 @@ const LoadingScreen = ({ onDone }: { onDone: () => void }) => {
         width: '500px',
         height: '300px',
         borderRadius: '50%',
-        background: 'radial-gradient(ellipse, #5201FF 0%, transparent 70%)',
+        background: 'radial-gradient(ellipse, #e8d5ff 0%, transparent 70%)',
         animation: 'glowPulse 3s ease-in-out infinite',
         filter: 'blur(60px)',
         pointerEvents: 'none',
@@ -71,7 +71,7 @@ const LoadingScreen = ({ onDone }: { onDone: () => void }) => {
       {/* Diamond ornament */}
       <div style={{
         animation: 'fadeIn 0.6s 0.2s ease both',
-        color: '#a78bfa',
+        color: '#5201FF',
         fontSize: '1.1rem',
         marginBottom: '18px',
         letterSpacing: '12px',
@@ -101,8 +101,8 @@ const LoadingScreen = ({ onDone }: { onDone: () => void }) => {
         opacity: 0,
       }}>
         <span style={{
-          color: '#ffffff',
-          textShadow: '0 0 40px rgba(255,255,255,0.15)',
+          color: '#08060d',
+          textShadow: 'none',
         }}>
           Event
         </span>
@@ -130,7 +130,7 @@ const LoadingScreen = ({ onDone }: { onDone: () => void }) => {
       <p style={{
         animation: 'fadeIn 0.8s 1.1s ease both',
         opacity: 0,
-        color: 'rgba(167, 139, 250, 0.55)',
+        color: 'rgba(82, 1, 255, 0.45)',
         fontFamily: "'IBM Plex Sans Arabic', system-ui, sans-serif",
         fontSize: '0.72rem',
         letterSpacing: '4px',
