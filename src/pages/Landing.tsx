@@ -6,7 +6,7 @@ import { useState } from "react";
 
 
 const Landing = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const { t, i18n } = useTranslation();
   const isRtl = i18n.language === 'ar';
 
