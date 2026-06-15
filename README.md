@@ -1,75 +1,87 @@
-# React + TypeScript + Vite
+# EventRental — Saudi Wedding Event Rental Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A bilingual (Arabic / English) event rental web app built for the Saudi market, focused on wedding and celebration equipment rental in Riyadh.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Bilingual UI** — Full Arabic (RTL) and English (LTR) support with instant language switching
+- **Product Catalog** — 30+ items across 5 categories: Furniture, Wedding Decor, Tableware, Lighting & Sound, Tents
+- **Smart Filtering** — Filter by category, price range, and color; live search across all products
+- **Reservation System** — Multi-step booking form with delivery options and automatic WhatsApp order submission
+- **WhatsApp Integration** — Floating chat button + reservation confirmation sent directly to WhatsApp
+- **Lazy Image Loading** — Shimmer skeleton placeholders for fast perceived performance
+- **Responsive Design** — Mobile-first layout with a collapsible navbar and mobile filter drawer
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+| Layer | Technology |
+|---|---|
+| Framework | React 19 + Vite 8 |
+| Language | TypeScript |
+| Styling | Tailwind CSS v4 |
+| Routing | React Router v7 |
+| State | Zustand |
+| i18n | i18next |
+| Icons | Lucide React + React Icons |
+| Font | IBM Plex Sans Arabic (Google Fonts) |
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+```bash
+# Install dependencies
+npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Start dev server
+npm run dev
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Type check
+npx tsc --noEmit
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Build for production
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── components/
+│   ├── layout/        # Navbar, Footer, WhatsAppButton
+│   └── ui/            # LazyImage, reusable components
+├── data/
+│   └── mockData.js    # Products, categories, popular items
+├── i18n.ts            # Arabic / English translations
+├── layouts/
+│   └── MainLayout.tsx # Root layout with WhatsApp button
+├── pages/
+│   ├── Landing.tsx    # Home page
+│   ├── Categories.tsx # Package categories
+│   ├── Produits.tsx   # Full product catalog with filters
+│   ├── ItemDetail.tsx # Single product detail
+│   ├── Items.tsx      # Items within a package
+│   ├── Reservation.tsx# Multi-step booking form
+│   └── Contact.tsx    # Contact page
+├── routes/
+│   └── AppRoutes.tsx  # Route definitions
+└── store/
+    └── useStore.ts    # Zustand cart & reservation store
+```
+
+## Deployment (Netlify)
+
+1. Push to GitHub
+2. Connect repo to [Netlify](https://app.netlify.com)
+3. Set build settings:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+4. Add `public/_redirects` for SPA routing:
+   ```
+   /* /index.html 200
+   ```
+
+## Contact & Location
+
+- **Location:** Riyadh, Saudi Arabia
+- **Phone:** +966 50 123 4567
+- **Email:** info@eventrental.sa
+- **WhatsApp:** [wa.me/966501234567](https://wa.me/966501234567)
